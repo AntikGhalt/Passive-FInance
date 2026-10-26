@@ -42,7 +42,7 @@ La riserva è parte del patrimonio e dei versamenti del piano, non denaro aggiun
 
 ## Bande azionarie
 
-Ogni scenario con azioni ha una banda ombreggiata dello stesso colore della linea, ottenuta variando **solo il rendimento azionario di ±2 punti percentuali annui**. Sono simulazioni deterministiche, non intervalli di confidenza, probabilità o limiti alle perdite. Le bande non aggiungono altre linee. L’ipotesi azionaria centrale rimane **8,4%**, modificabile.
+Ogni scenario con azioni ha una banda ombreggiata dello stesso colore della linea, ottenuta variando **solo il rendimento azionario di ±2 punti percentuali annui**. Sono simulazioni deterministiche, non intervalli di confidenza, probabilità o limiti alle perdite. Le bande non aggiungono altre linee. Nelle schede e nella tabella degli scenari, gli estremi `[min; max]` sono riportati su una riga separata sotto patrimonio, guadagno e TIR, nelle stesse unità del valore centrale. Senza azioni gli estremi coincidono. L’ipotesi azionaria centrale rimane **8,4%**, modificabile.
 
 ## Convenzioni e limiti
 

@@ -31,7 +31,7 @@ Riferimento operativo per il bollo: [ING](https://www.ing.it/faq/altre-informazi
 
 ## Fondo emergenza
 
-Nel selettore **Come usi il deposito?** si può passare dalla quota percentuale al fondo emergenza. L’obiettivo iniziale è **10.000 euro reali**, modificabile, rivalutato annualmente con l’inflazione.
+Nel selettore **Come distribuisci il risparmio?** si può scegliere tra **Quote percentuali** e **Quote percentuali + fondo emergenza fisso**. Il deposito è la prima attività e contiene il campo **Quota fissa fondo emergenza (€ di oggi)**. Il piano iniziale usa un fondo emergenza di **10.000 euro reali**, modificabile e rivalutato annualmente con l’inflazione; il risparmio oltre la riserva è destinato al **90% ad azioni e al 10% a obbligazioni societarie** (BTP 0%). Le personalizzazioni già salvate nel browser sono conservate; **Ripristina valori iniziali** applica questo piano.
 
 1. Capitale iniziale e nuovi versamenti completano prima il deposito fino all’obiettivo.
 2. Il resto è investito in azioni, BTP e obbligazioni: le tre percentuali devono sommare a 100%.

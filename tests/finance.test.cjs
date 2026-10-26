@@ -6,7 +6,7 @@ const {DEFAULT,simulate,irr,validate}=box.api;
 const clone=x=>JSON.parse(JSON.stringify(x));
 let checks=0;
 function close(a,b){assert.ok(Math.abs(a-b)<1e-7*Math.max(1,Math.abs(b)),`${a} != ${b}`);checks++}
-function plan(){const p=clone(DEFAULT);Object.assign(p,{initial:10000,annual:0,years:1,inflation:0,growth:0});p.assets.forEach((a,i)=>Object.assign(a,{q:i===0?100:0,r:0,c:0,stamp:0,entry:0,tax:26,mode:'final'}));return p}
+function plan(){const p=clone(DEFAULT);Object.assign(p,{reserve:false,initial:10000,annual:0,years:1,inflation:0,growth:0});p.assets.forEach((a,i)=>Object.assign(a,{q:i===0?100:0,r:0,c:0,stamp:0,entry:0,tax:26,mode:'final'}));return p}
 {
  const p=plan();p.assets[0].r=10;close(simulate(p).last.net,10740);close(irr(simulate(p)),.074);
  p.assets[0].stamp=.2;const z=simulate(p).last;close(z.stamp,22);close(z.net,10718);close(z.paid+z.finalTax,260);close(z.tax,282);assert.ok(z.paid>0);checks++;
@@ -27,7 +27,7 @@ function plan(){const p=clone(DEFAULT);Object.assign(p,{initial:10000,annual:0,y
  p.years=4;r=simulate(p);close(r.last.net,(10000+3310*.74)*1.074);
 }
 {
- const p=clone(DEFAULT),base=simulate(p),low=simulate(p,-2),high=simulate(p,2);assert.ok(low.last.net<base.last.net&&base.last.net<high.last.net);checks++;
+ const p=clone(DEFAULT);p.reserve=false;p.assets.forEach((a,i)=>a.q=[40,30,10,20][i]);const base=simulate(p),low=simulate(p,-2),high=simulate(p,2);assert.ok(low.last.net<base.last.net&&base.last.net<high.last.net);checks++;
  for(let i=1;i<4;i++)close(low.last.values[i],high.last.values[i]);
  const r=clone(p);r.reserve=true;r.assets.forEach((a,i)=>a.q=i===3?0:a.q/80*100);assert.equal(validate(r),'');checks++;
  for(const mode of ['final','annual','monthly','daily','every3','every5','every10'])for(const reserve of [false,true])for(const inflation of [-2,0,2,10]){
